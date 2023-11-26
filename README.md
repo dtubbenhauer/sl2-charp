@@ -7,7 +7,7 @@ The code is in a **.n** file that can be downloaded from this site and you can r
 
 You can also download a **.pdf** file where additional material for the paper can be found, e.g. more details for some of the calculations.
 
-An Erratum for the paper *Asymptotics in finite monoidal categories* can be found at the bottom of the page.
+An Erratum for the paper *Fractal behavior of tensor powers of the two dimensional space in prime characteristic* can be found at the bottom of the page.
 
 # Contact
 
@@ -20,14 +20,12 @@ Same goes for any errors related to this page.
 # Background
 
 Let $\mathbf{k}$ be a field and let $\Gamma$ be a group, possibly an algebraic group or affine group scheme over $\mathbf{k}$. For any finite dimensional $\Gamma$-representation $W$ 
-over $\mathbf{k}$ let $\nu(W)\in\mathbb{Z}_{\geq 0}$ be an integer $\nu$ such that
+over $\mathbf{k}$ let $\nu(W)\in\mathbb{Z_{\geq\text{0}}}$ be an integer $\nu$ such that
 $W\cong\oplus_{i=1}^{\nu}W_{i}$,
 where $W_{i}$ are indecomposable $\Gamma$-representations. This number is well-defined
-by the Krull--Schmidt theorem. Now let $V$ be a finite dimensional $\Gamma$-representation and define
+by the Krull&ndash;Schmidt theorem. Now let $V$ be a finite dimensional $\Gamma$-representation and define
 the integer sequence
-$$
-b_{n}(V):=\nu(V^{\otimes n}),\; n\in\mathbb{Z}_{\geq 0}.
-$$
+$$b_{n}(V):=\nu(V^{\otimes n}),n\in\mathbb{Z_{\geq\text{0}}}.$$
 To study the growth of $b_{n}$ is the main task of this paper.
 
 Let $V$ be a two dimensional vector space over an infinite field. Let $\Gamma$ be the algebraic group $SL(V)\simeq SL_{2}(\mathbf{k})$. Let 
