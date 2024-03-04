@@ -55,7 +55,7 @@ $$C_{1}\cdot n^{\alpha_{p}}\cdot 2^{n}\leq b_{n}\leq C_{2}\cdot n^{\alpha_{p}}\c
 
 The aim of the code on this page is to illustrate this theorem in examples.
 
-# Online illustrations
+# Mathematica code
 
 Growth rates of the vector representation of SL2 in positive characteristic
 
@@ -65,7 +65,7 @@ Growth rates of the vector representation of SL2 in positive characteristic
 
 To do
 
-# Extra material
+# Google Colab and machine learning
 
 To do
 
