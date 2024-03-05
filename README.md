@@ -65,7 +65,7 @@ bnrecursion[n,p]
 
 where $n$ is the maximal tensor power one considers and $p$ is the characteristic. The output is a table of length n of the numbers $b_{n}$ in the corresponding characteristic.
 
-If you do not have Mathematica at hand, then you can use the following links to see a plot of the growth rates (first link) or a list of the numbrs $b_{n}$ (second link):
+If you do not have Mathematica at hand, then you can use the following links to see a log plot of the growth rates (first link) or a list of the numbrs $b_{n}$ (second link):
 
 <https://www.wolframcloud.com/obj/02e25415-5c98-4dd9-84cf-8925156aeda9?_embed=iframe>
 
@@ -79,8 +79,55 @@ In contrast to the notebook, the online version has $n=100$ as its maximal value
 
 # Google Colab and machine learning
 
-To do
+Click on and you should see the following:
 
+![Google colab](colab.png?raw=true "Google colab")
+
+We will now explain the main pieces of the code.
+
+The first main part, after setting up test data that was computed using the Mathematica code above and is brute force implemented, we see
+
+```
+
+
+# Create a model class
+class RepTheoryModel(nn.Module): # <- almost everything in PyTorch is a nn.Module (think of this as neural network lego blocks)
+    def __init__(self):
+        super().__init__()
+        self.scalar = nn.Parameter(torch.randn(1, # <- start with random value (this will get adjusted as the model learns)
+                                            dtype=torch.float), # <- PyTorch loves float32 by default
+                                requires_grad=True) # <- can we update this value with gradient descent?))
+        self.error = nn.Parameter(torch.randn(1, # <- start with random value (this will get adjusted as the model learns)
+                                            dtype=torch.float), # <- PyTorch loves float32 by default
+                                requires_grad=True) # <- can we update this value with gradient descent?))
+        self.alpha = nn.Parameter(torch.randn(1, # <- start with random value (this will get adjusted as the model learns)
+                                            dtype=torch.float), # <- PyTorch loves float32 by default
+                                requires_grad=True) # <- can we update this value with gradient descent?))
+
+    # Forward defines the computation in the model
+    def forward(self, x: torch.Tensor) -> torch.Tensor: # <- "x" is the input data (e.g. training/testing features)
+        return (self.scalar + self.error*(-1)**x)*(x**(self.alpha)) # <- this is our guessed formula     
+```
+
+Here we setup a model with three parameters called self.scalar $s$, self.error $e$ and self.alpha $a$, and we guess that $b_{n}/2^{n}$ takes the form
+
+$$(s+e\cdot(-1)^{n})\cdot n^{a}.$$
+
+Why is that? Well, we expect (as very often in these cases)
+
+$$b_{n}\sim h(n)\cdot n^{\alpha}\cdot 2^{n},$$
+
+where $h(n)$ is oscillating.
+
+After the training, we get some reasonable answers:
+
+```
+The model learned the following values for our parameters are:
+OrderedDict([('scalar', tensor([0.7718])), ('error', tensor([0.0245])), ('alpha', tensor([-0.6747]))])
+```
+Not so bad, e.g. we expect $a\approx -0.68453512321427128145$.
+
+The model is **very naive**: it is a neural network with three inputs and one output and no hidden layers. It still performs reasonably well, so one could hope that this approach (after imporving it) helps with other problems where we do not know the answer.
 
 # Erratum
 
