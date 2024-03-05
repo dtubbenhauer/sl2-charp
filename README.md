@@ -57,13 +57,25 @@ The aim of the code on this page is to illustrate this theorem in examples.
 
 # Mathematica code
 
-Growth rates of the vector representation of SL2 in positive characteristic
+The Mathematica notebook has one major command:
+
+```
+bnrecursion[n,p]
+```
+
+where $n$ is the maximal tensor power one considers and $p$ is the characteristic. The output is a table of length n of the numbers $b_{n}$ in the corresponding characteristic.
+
+If you do not have Mathematica at hand, then you can use the following links to see a plot of the growth rates (first link) or a list of the numbrs $b_{n}$ (second link):
 
 <https://www.wolframcloud.com/obj/02e25415-5c98-4dd9-84cf-8925156aeda9?_embed=iframe>
 
 <https://www.wolframcloud.com/obj/de16c88e-6b99-42e3-8bb3-9fb6fb8d7d90?_embed=iframe>
 
-To do
+For the first link and depending on your resolution, you might want to increase the size and the output should look like this:
+
+![First link](plot-growth.png?raw=true "First link")
+
+In contrast to the notebook, the online version has $n=100$ as its maximal value.
 
 # Google Colab and machine learning
 
