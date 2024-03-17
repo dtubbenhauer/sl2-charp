@@ -3,7 +3,7 @@
 I collected a bit of Mathematica code relevant for the paper *Fractal behavior of tensor powers of the two dimensional space in prime characteristic*
 <a href="TBA">TBA</a> on this page.
 
-The code is in a **.n** file that can be downloaded from this site and you can run it with Mathematica. 
+The code is in two **.n** files that can be downloaded from this site and you can run it with Mathematica. 
 
 After the Mathematica code we explain a Google Colab file **. ipynb** where we explain (or rather sektch) how machine learning and deep learning can be used to tackle the main problem recalled in the background below.
 
@@ -57,7 +57,7 @@ The aim of the code on this page is to illustrate this theorem in examples.
 
 # Mathematica code
 
-The Mathematica notebook has one major command:
+The Mathematica notebook recursion-for-bn.nb has one major command:
 
 ```
 bnrecursion[n,p]
@@ -76,6 +76,13 @@ For the first link and depending on your resolution, you might want to increase 
 ![First link](plot-growth.png?raw=true "First link")
 
 In contrast to the notebook, the online version has $n=100$ as its maximal value.
+
+The second notebook length.nb computes the length using
+
+```
+CountSimple[n,p]
+```
+where $n$ is again the number of tensor factors and $p$ is the characteristic.
 
 # Google Colab and machine learning
 
