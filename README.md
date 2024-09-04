@@ -1,7 +1,7 @@
 # Code, additonal material and Erratum for *Fractal behavior of tensor powers of the two dimensional space in prime characteristic*
 
 I collected a bit of Mathematica code relevant for the paper *Fractal behavior of tensor powers of the two dimensional space in prime characteristic*
-<a href="TBA">TBA</a> on this page.
+<a href="https://arxiv.org/abs/2405.16786">https://arxiv.org/abs/2405.16786</a> on this page.
 
 The code is in two **.n** files that can be downloaded from this site and you can run it with Mathematica. 
 
